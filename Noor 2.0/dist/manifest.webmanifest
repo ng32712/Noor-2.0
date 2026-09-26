@@ -1,0 +1,43 @@
+{
+  "id": "/",
+  "name": "Qur'anLearn — Qur'an Teaching & Memorization",
+  "short_name": "Qur'anLearn",
+  "description": "Listen, recite and memorize the Qur'an with word-by-word tracking, tajweed lessons and smart revision. Works offline once installed.",
+  "start_url": "/index.html#/app",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f6efe3",
+  "theme_color": "#16352a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "books", "lifestyle"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon.svg", "sizes": "192x192", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Practice recitation",
+      "short_name": "Practice",
+      "url": "/index.html#/app/practice",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Open the Qur'an",
+      "short_name": "Qur'an",
+      "url": "/index.html#/app/quran",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Review queue",
+      "short_name": "Review",
+      "url": "/index.html#/app/review",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}

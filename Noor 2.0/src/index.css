@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Inter", "Space Grotesk", "Segoe UI", sans-serif;
+  --font-quran: "Amiri Quran", "Amiri", serif;
+
+  /* Refined color palette - preserving Noor identity but more subtle */
+  --color-forest: #1a3a30;
+  --color-forest-deep: #0f2620;
+  --color-forest-soft: #234a3e;
+  --color-cream: #f8f5f0;
+  --color-paper: #fdfbf7;
+  --color-burg: #8b3a4a;
+  --color-burg-deep: #6d2d3a;
+  --color-lav: #d4c5e8;
+  --color-lav-deep: #7b68ae;
+  --color-sun: #f4d35e;
+  --color-sun-deep: #e6c04a;
+  --color-blush: #f7c5d0;
+  --color-blush-deep: #d87a94;
+  --color-ink: #1a2520;
+  --color-sage: #8fa898;
+  --color-night: #0d1f18;
+  --color-nightcard: #1a3028;
+
+  /* Premium shadows - softer, more elegant */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(244, 211, 94, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.font-quran {
+  font-family: var(--font-quran);
+  line-height: 2.4;
+}
+
+/* ---------- Premium glass effects ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(26, 58, 48, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Premium cards ---------- */
+.card-premium {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-soft {
+  background: var(--color-paper);
+  border-radius: 1rem;
+  border: 1px solid rgba(26, 37, 32, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Subtle textures ---------- */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* ---------- Islamic geometric pattern ---------- */
+.pattern-islamic {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='none' stroke='%231a3a30' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ---------- Animations ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ---------- Scrollbar ---------- */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(26, 58, 48, 0.2);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 58, 48, 0.3);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+/* ---------- Dark mode ---------- */
+.dark body {
+  background: var(--color-night);
+  color: var(--color-cream);
+}
+
+.dark .card-premium {
+  background: var(--color-nightcard);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .card-soft {
+  background: var(--color-nightcard);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Focus states ---------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 2px;
+}

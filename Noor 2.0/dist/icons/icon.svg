@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="squircle">
+      <rect width="512" height="512" rx="116" ry="116"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="512" height="512" fill="#16352a"/>
+    <!-- ambient shapes -->
+    <circle cx="84" cy="440" r="120" fill="#1f4636"/>
+    <circle cx="452" cy="70" r="90" fill="#1f4636"/>
+    <circle cx="60" cy="60" r="7" fill="#f1c64e" opacity="0.85"/>
+    <circle cx="452" cy="428" r="6" fill="#f4b9c4" opacity="0.9"/>
+    <!-- crescent -->
+    <circle cx="248" cy="218" r="142" fill="#f1c64e"/>
+    <circle cx="304" cy="178" r="116" fill="#16352a"/>
+    <!-- open book cradled by the crescent -->
+    <path d="M146 352c34-22 70-32 110-32s76 10 110 32v34c-34-20-70-29-110-29s-76 9-110 29z" fill="#f6efe3"/>
+    <path d="M256 322v60" stroke="#16352a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M168 356c26-13 55-20 88-21M344 356c-26-13-55-20-88-21" stroke="#16352a" stroke-width="6" stroke-linecap="round" opacity="0.28" fill="none"/>
+    <!-- eight-point star -->
+    <path d="M378 118l7.5 18.5L404 144l-18.5 7.5L378 170l-7.5-18.5L352 144l18.5-7.5z" fill="#f4b9c4"/>
+    <circle cx="378" cy="144" r="5" fill="#16352a"/>
+  </g>
+</svg>
